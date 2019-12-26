@@ -1,0 +1,26 @@
+{
+  "name": "mockup",
+  "version": "1.0.0",
+  "description": "Starter for building prototypes",
+  "scripts": {
+    "clean": "rm -rf ./www",
+    "copy-html": "cpy '**/*.html' '../www/' --cwd=src --parents",
+    "build-style": "postcss -o www/style.css src/style.css",
+    "build": "npm run copy-html && npm run build-style",
+    "watch": "chokidar 'src/*' -c 'npm run build'",
+    "serve": "reload -b -d 'www'",
+    "start": "npm run watch & npm run serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "chokidar-cli": "^2.1.0",
+    "cpy-cli": "^3.0.0",
+    "postcss-cli": "^6.1.3",
+    "postcss-csso": "^4.0.0",
+    "reload": "^3.0.3",
+    "tailwindcss": "^1.1.4"
+  }
+}
